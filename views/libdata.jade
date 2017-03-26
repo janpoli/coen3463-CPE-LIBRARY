@@ -1,0 +1,83 @@
+extends layout
+
+block content
+
+    // Navigation
+    #navigation
+      nav.navbar.navbar-custom(role='navigation')
+        .container
+          .row
+            .col-md-2
+              .site-logo
+                a.brand(href='index.html') CpE Library
+            .col-md-10
+              // Brand and toggle get grouped for better mobile display
+              .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='#menu')
+                  i.fa.fa-bars
+              // Collect the nav links, forms, and other content for toggling
+              #menu.collapse.navbar-collapse
+                ul.nav.navbar-nav.navbar-right
+                  li.active
+                    a(href='/') Home
+                  li
+                    a(href='/access') List
+                      span.sr-only(current)  
+                  if (user.auth==='admin')
+                    li
+                      a(href='/libs/add') Add Subject
+                    li
+                      a(href='/libs/edit/users') Accounts
+                  li
+                    a(href='/auth/logout') Logout
+              // /.Navbar-collapse
+        // /.container
+    // /Navigation
+
+    section#list.home-section.color-dark.bg-white
+      .container.marginbot-50
+        .row
+          .col-lg-8.col-lg-offset-2
+            .animatedParent
+              .section-heading.text-center
+                h2 #{libdata.name}
+                .divider-header
+
+      .container
+        ul.animated.fadeInUp
+          li
+            .row.justify-content-center
+                    .col-8
+                      .card-block
+                          // Header
+                          .text-center#pos
+                            // Body
+                            p
+                            | Subject Code: #{libdata.code}
+                            br
+                            | Subject Year: #{libdata.year}
+                            br
+                            | Subject Sem: #{libdata.sem} 
+                          br
+                          br
+                          table.table
+                            thead
+                              tr
+                                th Item Description
+                                th Item Type
+                                th Upload Date
+                            tbody
+                              for item in items
+                                if (item.lib === libdata.code)                    
+                                  tr
+                                    td 
+                                      a(href="#{item.link}" target="_blank") #{item.description}
+                                    td #{item.type}
+                                    td #{moment(item.createdate).format("LLL")}
+
+                                  
+                          .text-center
+                              if (user.auth ==='admin')
+                                a.btn.btn-primary(href='/libs/'+libdata._id+'/update') Edit
+                                a.btn.btn-default(href='/libs/'+libdata._id+'/itemnew') Add link
+                              a.btn.btn-success(href='/access') Back

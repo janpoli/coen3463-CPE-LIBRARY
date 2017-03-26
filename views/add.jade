@@ -1,0 +1,105 @@
+extends layout
+
+block content
+    // Navigation
+    #navigation
+      nav.navbar.navbar-custom(role='navigation')
+        .container
+          .row
+            .col-md-2
+              .site-logo
+                a.brand(href='index.html') CpE Library
+            .col-md-10
+              // Brand and toggle get grouped for better mobile display
+              .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='#menu')
+                  i.fa.fa-bars
+              // Collect the nav links, forms, and other content for toggling
+              #menu.collapse.navbar-collapse
+                ul.nav.navbar-nav.navbar-right
+                  li.active
+                    a(href='/') Home
+                  li
+                    a(href='/access') List
+                      span.sr-only(current)  
+                  if (user.auth==='admin')
+                    li
+                      a(href='/libs/add') Add Subject
+                    li
+                      a(href='/libs/edit/users') Accounts
+                  li
+                    a(href='/auth/logout') Logout
+              // /.Navbar-collapse
+        // /.container
+    // /Navigation
+
+    section#list.home-section.color-dark.bg-white
+        .container.marginbot-50
+          .row
+            .col-lg-8.col-lg-offset-2
+              .animatedParent
+                .section-heading.text-center
+                  h2 Add a subject
+                  .divider-header
+
+          .container
+                form(method="POST", action="/libs/add")
+                  // Body
+                  if (error)
+                        .card.card-danger.text-center.z-depth-2.mb-1
+                          .card-block
+                            p.white-text.mb-0
+                              | #{error}
+                  else
+                    p 
+                    | Field with 
+                    strong.iscolor *
+                    |  is required.
+                  br
+                  // Body
+                  .md-form
+                    i.fa.prefix
+                    input#form3.form-control(type='text', name="name")
+                    label(for='form3') Subject Name*
+                  .md-form
+                    i.fa.prefix
+                    input#form2.form-control(type='text', name="code")
+                    label(for='form2') Subject Code*
+                  .md-form
+                    i.fa.prefix
+                    label Subject Year*
+                    br
+                    input(type='radio', name="year" value="1st Year") 
+                    |  1st Year
+                    br
+                    input(type='radio', name="year" value="2nd Year") 
+                    |  2nd Year
+                    br
+                    input(type='radio', name="year" value="3rd Year") 
+                    |  3rd Year
+                    br
+                    input(type='radio', name="year" value="4th Year") 
+                    |  4th Year
+                    br
+                    input(type='radio', name="year" value="5th Year") 
+                    |  5th Year
+                  .md-form
+                    i.fa.prefix
+                    label Subject Sem*
+                  .md-form
+                    input(type='radio', name="sem" value="1st Semester") 
+                    |  1st Semester
+                    br
+                    input(type='radio', name="sem" value="2nd Semester") 
+                    |  2nd Semester
+                                       
+                  .text-center
+                    button.btn.btn-default Submit
+                    .call
+                      br
+                      p
+                        | 
+                        br
+                        span
+                          i.fa.
+                        |  

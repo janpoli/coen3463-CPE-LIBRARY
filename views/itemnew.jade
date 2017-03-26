@@ -1,0 +1,103 @@
+extends layout
+
+block content
+  // Navigation
+  #navigation
+    nav.navbar.navbar-custom(role='navigation')
+      .container
+        .row
+          .col-md-2
+            .site-logo
+              a.brand(href='index.html') CpE Library
+          .col-md-10
+            // Brand and toggle get grouped for better mobile display
+            .navbar-header
+              button.navbar-toggle(type='button', data-toggle='collapse', data-target='#menu')
+                i.fa.fa-bars
+            // Collect the nav links, forms, and other content for toggling
+            #menu.collapse.navbar-collapse
+              ul.nav.navbar-nav.navbar-right
+                li.active
+                  a(href='/') Home
+                li
+                  a(href='/') List 
+                li
+                  a(href='/libs/add') Add Subject
+                li
+                  a(href='/libs/edit/users') Accounts
+                li
+                  a(href='/auth/logout') Logout
+            // /.Navbar-collapse
+      // /.container
+  // /Navigation
+
+  section#list.home-section.color-dark.bg-white
+    .container.marginbot-50
+      .row
+        .col-lg-8.col-lg-offset-2
+          .animatedParent
+            .section-heading.text-center
+              h2 Add New
+              .divider-header
+
+      .view
+        .full-bg-img.flex-center
+          ul.animated.fadeInUp
+            li
+              br
+              .container.row.justify-content-center
+                .col-6
+                  .card-block
+                    form(method="POST", action="/libs/#{lib._id}/itemnew")
+                      // Header
+                      .text-center
+                        
+                        hr.mt-2.mb-2
+                      // Body
+                      if (error)
+                            .card.card-danger.text-center.z-depth-2.mb-1
+                              .card-block
+                                p.white-text.mb-0
+                                  | #{error}
+                      else
+                        p 
+                        | Field with 
+                        strong.iscolor *
+                        |  is required.
+                      br
+                      // Body
+                      .md-form
+                        i.fa.prefix
+                        input#form3.form-control(type='text', name="description")
+                        label(for='form3') Item Description*
+                      .md-form
+                        i.fa.prefix
+                        label Item Type*
+                      .md-form
+                        input(type='radio', name="type" value="PDF") 
+                        |  PDF
+                        br
+                        input(type='radio', name="type" value="Docx") 
+                        |  .doc
+                        br
+                        input(type='radio', name="type" value="Picture") 
+                        |  Picture
+                        br
+                        input(type='radio', name="type" value="others") 
+                        |  others
+                      .md-form
+                        i.fa.prefix
+                        input#form32.form-control(type='text', name="link")
+                        label(for='form32') URL*
+                      
+                                           
+                      .text-center
+                        button.btn.success-color-dark Submit
+                        .call
+                          br
+                          p
+                            | 
+                            br
+                            span
+                              i.fa.
+                            |  

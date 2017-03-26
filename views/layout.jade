@@ -1,0 +1,236 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title CpE Library
+    // css
+    link(rel='stylesheet', href='design/css/bootstrap.min.css')
+    link(href='/./design/css/nivo-lightbox.css', rel='stylesheet')
+    link(href='/./design/css/nivo-lightbox-theme/default/default.css', rel='stylesheet', type='text/css')
+    link(href='/./design/css/animations.css', rel='stylesheet')
+    link(href='/./design/css/style.css', rel='stylesheet')
+    link(href='/./design/color/default.css', rel='stylesheet')
+
+    link(rel='stylesheet', href='/./assets/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/./assets/css/bootstrap.min.css')
+    // For Plugins external css
+    link(rel='stylesheet', href='/./assets/css/plugins.css')
+    // Theme custom css
+    link(rel='stylesheet', href='/./assets/css/style.css')
+    // Theme Responsive css
+    link(rel='stylesheet', href='/./assets/css/responsive.css')
+    script(src='/./assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')
+
+    script(type="text/javascript", src="/javascripts/jquery-min.js")
+    script(type="text/javascript", src="/javascripts/main.js")
+
+  body#page-top(data-spy='scroll', data-target='.navbar-custom')
+    section#intro.hero
+      .container
+        .row
+          .col-md-12.text-right.navicon
+            a#nav-toggle.nav_slide_button(href='#')
+              span
+        .row
+          .col-md-8.col-md-offset-2.text-center.inner
+            .animatedParent
+              h1.animated.fadeInDown CpE LIBRARY
+              p.animated.fadeInUp Find and Download resources for your subjects!
+        .row
+          .col-md-6.col-md-offset-3.text-center
+            a.learn-more-btn.btn-scroll(href='') Hello, #{user.username}
+    //- // Navigation
+    //- #navigation
+    //-   nav.navbar.navbar-custom(role='navigation')
+    //-     .container
+    //-       .row
+    //-         .col-md-2
+    //-           .site-logo
+    //-             a.brand(href='index.html') CpE Library
+    //-         .col-md-10
+    //-           // Brand and toggle get grouped for better mobile display
+    //-           .navbar-header
+    //-             button.navbar-toggle(type='button', data-toggle='collapse', data-target='#menu')
+    //-               i.fa.fa-bars
+    //-           // Collect the nav links, forms, and other content for toggling
+    //-           #menu.collapse.navbar-collapse
+    //-             ul.nav.navbar-nav.navbar-right
+    //-               li.active
+    //-                 a(href='/') Home
+    //-               li
+    //-                 a(href='/libs/add') Add Subject
+    //-               li
+    //-                 a(href='/libs/edit/users') Accounts
+    //-               li
+    //-                 a(href='/auth/logout') Logout
+    //-           // /.Navbar-collapse
+    //-     // /.container
+    //- // /Navigation
+    
+    body
+      block content
+
+    footer
+      .container
+        .row
+          .col-md-6
+            ul.footer-menu
+              li
+                a(href='#') Home
+              li
+                a(href='#') Press release
+          .col-md-6.text-right.copyright
+            .credits
+              //
+                All the links in the footer should remain intact.
+                You can delete the links only if you purchased the pro version.
+                Licensing information: https://bootstrapmade.com/license/
+                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Bocor
+              a(href='#') Cpe Library
+              br
+              |  by 
+              p Team 10
+    // Core JavaScript Files
+    script(src='design/js/jquery.min.js')
+    script(src='design/js/bootstrap.min.js')
+    script(src='design/js/jquery.sticky.js')
+    script(src='design/js/jquery.easing.min.js')
+    script(src='design/js/jquery.scrollTo.js')
+    script(src='design/js/jquery.appear.js')
+    script(src='design/js/stellar.js')
+    script(src='design/js/nivo-lightbox.min.js')
+    script(src='js/custom.js')
+    script(src='design/js/css3-animate-it.js')
+    script(src='design/contactform/contactform.js')
+
+
+//- doctype html
+//- //
+//-   if lt IE 7html.no-js.lt-ie9.lt-ie8.lt-ie7(lang='')
+//- //
+//-   if IE 7html.no-js.lt-ie9.lt-ie8(lang='')
+//- //
+//-   if IE 8html.no-js.lt-ie9(lang='')
+//- //if gt IE 8
+//-   | [if gt IE 8]
+//- html.no-js(lang='')
+//-   // <![endif]
+//-   head
+//-     meta(charset='utf-8')
+//-     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+//-     title 2017 Events and Holidays
+//-     meta(name='description', content='')
+//-     meta(name='viewport', content='width=device-width, initial-scale=1')
+//-     link(rel='apple-touch-icon', href='apple-touch-icon.png')
+//-     // Google fonts links
+//-     link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet')
+//-     link(rel='stylesheet', href='/./assets/css/fonticons.css')
+//-     link(rel='stylesheet', href='/./assets/css/slider-pro.css')
+//-     // <link rel="stylesheet" href="./assets/css/stylesheet.css">
+  link(rel='stylesheet', href='/./assets/css/font-awesome.min.css')
+  link(rel='stylesheet', href='/./assets/css/bootstrap.min.css')
+  // For Plugins external css
+  link(rel='stylesheet', href='/./assets/css/plugins.css')
+  // Theme custom css
+  link(rel='stylesheet', href='/./assets/css/style.css')
+  // Theme Responsive css
+  link(rel='stylesheet', href='/./assets/css/responsive.css')
+  script(src='/./assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')
+  body(data-spy='scroll', data-target='.navbar-collapse')
+//-     //
+//-     script(type="text/javascript", src="/javascripts/jquery-min.js")
+//-     script(type="text/javascript", src="/javascripts/main.js")
+//-       //- if lt IE 8
+//-       //- p.browserupgrade
+//-       //- | You are using an
+//-       //- strong outdated
+//-       //- |  browser. Please
+//-       //- a(href='http://browsehappy.com/') upgrade your browser
+//-       //- |  to improve your experience.
+//-     .preloader
+//-       .loaded  
+//-     header#main_menu.header.navbar-fixed-top
+//-       .main_menu_bg
+//-         .container
+//-           .row
+//-             .nave_menu
+//-               nav#navmenu.navbar.navbar-default
+//-                 .container-fluid
+//-                   // Brand and toggle get grouped for better mobile display
+//-                   .navbar-header
+//-                     button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
+//-                       span.sr-only Toggle navigation
+//-                       span.icon-bar
+//-                       span.icon-bar
+//-                       span.icon-bar
+//-                     a.navbar-brand(href='/')
+//-                       img(src='/./assets/images/logo.png')
+//-                   // Collect the nav links, forms, and other content for toggling
+//-                   #bs-example-navbar-collapse-1.collapse.navbar-collapse
+//-                     ul.nav.navbar-nav.navbar-right
+//-                       li
+//-                         a(href='/') Home |
+//-                       //- li
+//-                       //-   a(href='/blobs') Event List |
+//-                       //- if (user.auth==='admin')
+//-                       li
+//-                           a(href='/libs/add') Add Event |
+//-                       li
+//-                         a(href='/auth/logout') Logout |
+//-                       //- if (user.auth==='admin')
+//-                       li.nav-item
+//-                           a.nav-link(href='/libs/edit/users') Accounts
+
+//-   body
+//-     block content
+
+//-     // footer Section
+//-     footer#footer.footer
+//-       .container
+//-         .main_footer
+//-           .row
+//-             .col-sm-12
+//-               .copyright_text.text-center
+//-                 p.wow.fadeInRight(data-wow-duration='1s')
+//-                   | By Team 10 
+//-                   i.fa.fa-heart
+//-                   |  @ 
+//-                   a(target='_blank', href='https://github.com/janpoli/coen3463-m3t10/tree/master') Github
+//-                   |  Policarpio || Tanyag
+//-       // End of container
+//-     // End of footer
+//-     // START SCROLL TO TOP
+//-     .scrollup
+//-       a(href='#')
+//-         i.fa.fa-chevron-up
+//-     script(src='/./assets/js/vendor/jquery-1.11.2.min.js')
+//-     script(src='/./assets/js/vendor/bootstrap.min.js')
+//-     script(src='/./assets/js/jquery.easing.1.3.js')
+//-     script(src='/./assets/js/masonry/masonry.min.js')
+//-     script(type='/./text/javascript').
+//-       $('.mixcontent').masonry();
+//-     script(src='/./assets/js/jquery.sliderPro.min.js')
+//-     script(type='text/javascript').
+//-       $(document).ready(function ($) {
+//-       $('#example3').sliderPro({
+//-       width: 960,
+//-       height: 200,
+//-       fade: true,
+//-       arrows: false,
+//-       buttons: true,
+//-       fullScreen: false,
+//-       shuffle: true,
+//-       smallSize: 500,
+//-       mediumSize: 1000,
+//-       largeSize: 3000,
+//-       thumbnailArrows: true,
+//-       autoplay: false,
+//-       thumbnailsContainerSize: 960
+//-       });
+//-       });
+//-     script(src='/./assets/js/plugins.js')
+//-     script(src='/./assets/js/main.js')
+

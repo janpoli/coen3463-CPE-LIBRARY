@@ -1,0 +1,74 @@
+
+extends layout
+
+block content
+    // Navigation
+    #navigation
+      nav.navbar.navbar-custom(role='navigation')
+        .container
+          .row
+            .col-md-2
+              .site-logo
+                a.brand(href='index.html') CpE Library
+            .col-md-10
+              // Brand and toggle get grouped for better mobile display
+              .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='#menu')
+                  i.fa.fa-bars
+              // Collect the nav links, forms, and other content for toggling
+              #menu.collapse.navbar-collapse
+                ul.nav.navbar-nav.navbar-right
+                  li.active
+                    a(href='/') Home
+                  li
+                    a(href='/libs') List 
+                  li
+                    a(href='/libs/add') Add Subject
+                  li
+                    a(href='/libs/edit/users') Accounts
+                  li
+                    a(href='/auth/logout') Logout
+              // /.Navbar-collapse
+        // /.container
+    // /Navigation
+
+    section#list.home-section.color-dark.bg-white
+        .container.marginbot-50
+          .row
+            .col-lg-8.col-lg-offset-2
+              .animatedParent
+                .section-heading.text-center
+                  h2 Accounts
+                  .divider-header
+        .text-center
+          .container
+                    form(method="POST", action="/libs/edit/users/modify/#{update._id}")
+                      // Body
+                      
+                      br
+                      // Body
+                      .md-form
+                        i.fa.prefix
+                        input#form3.form-control(type='text', name="username", value="#{update.username}")
+                        label(for='form3') Username*
+                      .md-form
+                        i.fa.prefix
+                        input#form2.form-control(type='text', name="first_name", value="#{update.first_name}")
+                        label(for='form2') First Name
+                      .md-form
+                        i.fa.prefix
+                        input#form32.form-control(type='text', name="last_name", value="#{update.last_name}")
+                        label(for='form32') Last Name
+                      .md-form
+                        i.fa.prefix
+                        input#form32.form-control(type='text', name="email", value="#{update.email}")
+                        label(for='form32') Email
+                      .md-form
+                        i.fa.prefix
+                        input#form34.form-control(type='text', name="auth", value="#{update.auth}")
+                        label(for='form34') Account Type(admin or student)
+                      .text-center
+                        button.btn.btn-default(type="submit") Edit
+                        a.btn.btn-primary(href='/libs/edit/users') Cancel
+
+

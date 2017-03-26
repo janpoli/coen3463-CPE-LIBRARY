@@ -1,0 +1,62 @@
+extends layout
+
+block content
+  // Navigation
+  #navigation
+    nav.navbar.navbar-custom(role='navigation')
+      .container
+        .row
+          .col-md-2
+            .site-logo
+              a.brand(href='index.html') CpE Library
+          .col-md-10
+            // Brand and toggle get grouped for better mobile display
+            .navbar-header
+              button.navbar-toggle(type='button', data-toggle='collapse', data-target='#menu')
+                i.fa.fa-bars
+            // Collect the nav links, forms, and other content for toggling
+            #menu.collapse.navbar-collapse
+              ul.nav.navbar-nav.navbar-right
+                li.active
+                  a(href='/') Home
+                li
+                  a(href='/') List 
+                li
+                  a(href='/libs/add') Add Subject
+                li
+                  a(href='/libs/edit/users') Accounts
+                li
+                  a(href='/auth/logout') Logout
+            // /.Navbar-collapse
+      // /.container
+  // /Navigation
+
+  section#list.home-section.color-dark.bg-white
+      .container.marginbot-50
+        .row
+          .col-lg-8.col-lg-offset-2
+            .animatedParent
+              .section-heading.text-center
+                h2 Accounts
+                .divider-header
+
+        .container
+            table.table
+              thead
+                tr
+                  th User 
+                  th Account Type
+                  th Action
+                tbody
+                  for user in users
+                      tr
+                        td #{user.username}
+                        td #{user.auth}
+                        td
+                          a(href="/libs/edit/users/modify/#{user._id}")
+                            button.btn.btn-primary
+                              | Save  
+                          a.red-text(href="/libs/edit/users/delete/#{user._id}")
+                            button.btn.btn-danger
+                              | Delete
+

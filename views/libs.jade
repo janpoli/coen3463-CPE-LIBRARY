@@ -1,0 +1,75 @@
+extends layout
+
+block content
+
+    // Navigation
+    #navigation
+      nav.navbar.navbar-custom(role='navigation')
+        .container
+          .row
+            .col-md-2
+              .site-logo
+                a.brand(href='index.html') CpE Library
+            .col-md-10
+              // Brand and toggle get grouped for better mobile display
+              .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='#menu')
+                  i.fa.fa-bars
+              // Collect the nav links, forms, and other content for toggling
+              #menu.collapse.navbar-collapse
+                ul.nav.navbar-nav.navbar-right
+                  li.active
+                    a(href='/') Home
+                  li
+                    a(href='/access') List
+                      span.sr-only(current)  
+                  if (user.auth==='admin')
+                    li
+                      a(href='/libs/add') Add Subject
+                    li
+                      a(href='/libs/edit/users') Accounts
+                  li
+                    a(href='/auth/logout') Logout
+              // /.Navbar-collapse
+        // /.container
+    // /Navigation
+
+    // Section: about
+    section#list.home-section.color-dark.bg-white
+      .container.marginbot-50
+        .row
+          .col-lg-8.col-lg-offset-2
+            .animatedParent
+              .section-heading.text-center
+                h2 Subject List 
+                #count
+                .divider-header
+        .row
+          .container
+            .text-right
+              form.waves-effect.waves-light(method= 'post', action= '/access', onsubmit= 'getSearch()')
+                input#search.form-search(type='search', placeholder='Search')
+
+            .dropdown
+                      button.btn.btn-default(type='button', data-toggle='dropdown')
+                        | Sort by
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a#aitem(href="/fifth") 5th Year
+                        li
+                          a#aitem(href="/fourth") 4th Year
+                        li
+                          a#aitem(href="/third") 3rd Year
+                        li
+                          a#aitem(href="/second") 2nd Year
+                        li
+                          a#aitem(href="/first") 1st Year
+                        li
+                          a#aitem(href="/") All
+              
+          br
+          .text-center
+            .container
+              .row.animatedParent
+                #table-body
