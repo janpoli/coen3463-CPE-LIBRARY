@@ -53,12 +53,9 @@ block content
                         label(for='form3') Username*
                       .md-form
                         i.fa.prefix
-                        input#form2.form-control(type='text', name="first_name", value="#{update.first_name}")
-                        label(for='form2') First Name
-                      .md-form
-                        i.fa.prefix
-                        input#form32.form-control(type='text', name="last_name", value="#{update.last_name}")
-                        label(for='form32') Last Name
+                        input#form2.form-control(type='text', name="name", value="#{update.name}")
+                        label(for='form2') Name
+                      
                       .md-form
                         i.fa.prefix
                         input#form32.form-control(type='text', name="email", value="#{update.email}")
@@ -68,7 +65,7 @@ block content
                         input#form34.form-control(type='text', name="auth", value="#{update.auth}")
                         label(for='form34') Account Type(admin or student)
                       .text-center
-                        button.btn.btn-default(type="submit") Edit
+                        button.btn.btn-default(type="submit") Save
                         a.btn.btn-primary(href='/libs/edit/users') Cancel
 
 

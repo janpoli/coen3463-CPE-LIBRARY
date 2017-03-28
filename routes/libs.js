@@ -7,9 +7,9 @@ var User = require('../model/user');
 
 router.use(function(req, res, next) {
   if(!req.user){
-    res.redirect('/access')
-  }else if(req.user.auth!=='admin') {
     res.redirect('/auth/login')
+  }else if(req.user.auth!=='admin') {
+    res.redirect('/access')
   }
   next();
 });

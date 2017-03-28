@@ -56,14 +56,16 @@ block content
                 th Item Description
                 th Item Type
                 th Upload Date
+                th Actions
             tbody
               for item in items
                 if (item.lib === libdata.code)                    
                   tr
-                    td 
-                      a(href="#{item.link}" target="_blank") #{item.description}
+                    td #{item.description}
                     td #{item.type}
                     td #{moment(item.createdate).format("LLL")}
+                    td
+                      a.btn.btn-primary(href="#{item.link}" target="_blank") Download
 
                   
           .text-center.dd
