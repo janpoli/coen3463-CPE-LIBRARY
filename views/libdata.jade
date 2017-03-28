@@ -34,50 +34,40 @@ block content
         // /.container
     // /Navigation
 
-    section#list.home-section.color-dark.bg-white
-      .container.marginbot-50
+    section#list.home-section.color-dark.bg-white.paddd
+      .container
         .row
-          .col-lg-8.col-lg-offset-2
-            .animatedParent
-              .section-heading.text-center
-                h2 #{libdata.name}
-                .divider-header
+          .headx
+            h2 #{libdata.name}
+            .divider-headerx
 
       .container
-        ul.animated.fadeInUp
-          li
-            .row.justify-content-center
-                    .col-8
-                      .card-block
-                          // Header
-                          .text-center#pos
-                            // Body
-                            p
-                            | Subject Code: #{libdata.code}
-                            br
-                            | Subject Year: #{libdata.year}
-                            br
-                            | Subject Sem: #{libdata.sem} 
-                          br
-                          br
-                          table.table
-                            thead
-                              tr
-                                th Item Description
-                                th Item Type
-                                th Upload Date
-                            tbody
-                              for item in items
-                                if (item.lib === libdata.code)                    
-                                  tr
-                                    td 
-                                      a(href="#{item.link}" target="_blank") #{item.description}
-                                    td #{item.type}
-                                    td #{moment(item.createdate).format("LLL")}
+        .subjC
+          p
+          | Code: #{libdata.code}
+          br
+          | Year: #{libdata.year}
+          br
+          | Semester: #{libdata.sem} 
+        .tableC                  
+          table.table
+            thead
+              tr
+                th Item Description
+                th Item Type
+                th Upload Date
+            tbody
+              for item in items
+                if (item.lib === libdata.code)                    
+                  tr
+                    td 
+                      a(href="#{item.link}" target="_blank") #{item.description}
+                    td #{item.type}
+                    td #{moment(item.createdate).format("LLL")}
 
-                                  
-                          .text-center
-                              if (user.auth ==='admin')
-                                a.btn.btn-primary(href='/libs/'+libdata._id+'/update') Edit
-                                a.btn.btn-default(href='/libs/'+libdata._id+'/itemnew') Add link
-                              a.btn.btn-success(href='/access') Back
+                  
+          .text-center.dd
+              if (user.auth ==='admin')
+                a.btn.btn-primary.butn(href='/libs/'+libdata._id+'/update') Edit
+                a.btn.btn-primary.butn(href='/libs/'+libdata._id+'/itemnew') Add link
+              a.btn.btn-success.butn(href='/access') Back

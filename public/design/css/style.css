@@ -301,8 +301,7 @@ hr.bold {
 	display: block;
 	width: 40px;
 	height: 2px;
-	margin: 0 auto;
-	margin-bottom: 10px;
+	margin: 16px auto !important;
 }
 
 .divider-short {
@@ -1093,3 +1092,52 @@ a.btn:focus{
 		margin-bottom: 30px;
 	}
 }
+
+/*-----------HEADER---------------*/
+.headx{
+	width: 500px;
+    margin: 0 auto;
+    position: relative;
+    top: -35px;
+    text-align: center;
+}
+.divider-headerx {
+	display: block;
+    width: 390px;
+    height: 2px;
+    margin: 16px auto !important;
+    border-bottom: 2px solid black;
+}
+.leftme{
+	text-align: left;
+}
+.margBot{
+	margin-bottom: 12px;
+	margin-top: 12px;
+}
+.marg{
+	margin: 19px;
+}
+.subjC{
+	width: 400px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+.tableC{
+	width: 800px;
+    margin: 0 auto;
+}
+.butn{
+	background-color: #a72d76!important;
+    border-color: black!important;
+    width: 130px;
+    margin: 0px 15px;
+}
+.dd{
+	position: relative;
+    top: 54px;
+}
+.paddd{
+	height: 830px;
+}
+/*------------END------------------*/

@@ -32,67 +32,61 @@ block content
     // /Navigation
 
     section#list.home-section.color-dark.bg-white
-        .container.marginbot-50
+        .container
           .row
-            .col-lg-8.col-lg-offset-2
-              .animatedParent
-                .section-heading.text-center
-                  h2 Edit Item
-                  .divider-header
+            .headx
+                h2 Edit Item
+                .divider-headerX
           .container
-            ul.animated.fadeInUp
-              li
-                .row.justify-content-center
-                  .col-8
-                      .card-block
-                        form(method="POST", action="/libs/#{update._id}/update")
-                          // Header
-                          .text-center
-                            hr.mt-2.mb-2
-                          // Body
-                          
-                          br
-                          // Body
-                          .md-form
-                            i.fa.prefix
-                            input#form3.form-control(type='text', name="name", value="#{update.name}")
-                            label(for='form3') Subject Name*
-                          .md-form
-                            i.fa.prefix
-                            input#form2.form-control(type='text', name="code", value="#{update.code}")
-                            label(for='form2') Subject Code*
-                          .md-form
-                            i.fa.prefix
-                            input#form32.form-control(type='text', name="year", value="#{update.year}")
-                            label(for='form32') Subject Year*
-                          .md-form
-                            i.fa.prefix
-                            input#form34.form-control(type='text', name="sem", value="#{update.sem}")
-                            label(for='form34') Subject Sem*
-                          .text-center
-                            button.btn.btn-default(type="submit") Save
-                            a.btn.btn-primary(href='/access/#{update._id}') Cancel
-                            a.btn.btn-danger(href='/libs/#{update._id}/Delete') Delete
-                          br
-                        table.table
-                            thead
-                              tr
-                                th Item Description
-                                th Item Type
-                                th Upload Date
-                                th Action
-                            tbody
-                              for item in items
-                                if (item.lib === update.code)
-                                  tr
-                                    td 
-                                      a(href="#{item.link}" target="_blank") #{item.description}
-                                    td #{item.type}
-                                    td #{moment(item.createdate).format("LLL")}
-                                    td
-                                      a.red-text(href="/libs/delete/#{update._id}/#{item._id}")
-                                        button.btn.btn-danger
-                                          | Delete
+            .headx
+              form(method="POST", action="/libs/#{update._id}/update")
+                // Header
+                .text-center
+                  hr.mt-2.mb-2
+                // Body
+                
+                br
+                // Body
+                .md-form
+                  i.fa.prefix
+                  input#form3.form-control(type='text', name="name", value="#{update.name}")
+                  label(for='form3') Subject Name*
+                .md-form
+                  i.fa.prefix
+                  input#form2.form-control(type='text', name="code", value="#{update.code}")
+                  label(for='form2') Subject Code*
+                .md-form
+                  i.fa.prefix
+                  input#form32.form-control(type='text', name="year", value="#{update.year}")
+                  label(for='form32') Subject Year*
+                .md-form
+                  i.fa.prefix
+                  input#form34.form-control(type='text', name="sem", value="#{update.sem}")
+                  label(for='form34') Subject Sem*
+                .text-center
+                  button.btn.btn-default(type="submit") Save
+                  a.btn.btn-primary(href='/access/#{update._id}') Cancel
+                  a.btn.btn-danger(href='/libs/#{update._id}/Delete') Delete
+                br
+              table.table
+                  thead
+                    tr
+                      th Item Description
+                      th Item Type
+                      th Upload Date
+                      th Action
+                  tbody
+                    for item in items
+                      if (item.lib === update.code)
+                        tr
+                          td 
+                            a(href="#{item.link}" target="_blank") #{item.description}
+                          td #{item.type}
+                          td #{moment(item.createdate).format("LLL")}
+                          td
+                            a.red-text(href="/libs/delete/#{update._id}/#{item._id}")
+                              button.btn.btn-danger
+                                | Delete
 
 
 

@@ -33,73 +33,142 @@ block content
         // /.container
     // /Navigation
 
-    section#list.home-section.color-dark.bg-white
-        .container.marginbot-50
-          .row
-            .col-lg-8.col-lg-offset-2
-              .animatedParent
-                .section-heading.text-center
-                  h2 Add a subject
-                  .divider-header
+    // section#list.home-section.color-dark.bg-white
+    //     .container.marginbot-50
+    //       .row
+    //         .col-lg-8.col-lg-offset-2
+    //           .animatedParent
+    //             .section-heading.text-center
+    //               h2 Add a subject
+    //               .divider-header
 
-          .container
-                form(method="POST", action="/libs/add")
-                  // Body
-                  if (error)
-                        .card.card-danger.text-center.z-depth-2.mb-1
-                          .card-block
-                            p.white-text.mb-0
-                              | #{error}
-                  else
-                    p 
-                    | Field with 
-                    strong.iscolor *
-                    |  is required.
-                  br
-                  // Body
-                  .md-form
-                    i.fa.prefix
-                    input#form3.form-control(type='text', name="name")
-                    label(for='form3') Subject Name*
-                  .md-form
-                    i.fa.prefix
-                    input#form2.form-control(type='text', name="code")
-                    label(for='form2') Subject Code*
-                  .md-form
-                    i.fa.prefix
-                    label Subject Year*
-                    br
-                    input(type='radio', name="year" value="1st Year") 
-                    |  1st Year
-                    br
-                    input(type='radio', name="year" value="2nd Year") 
-                    |  2nd Year
-                    br
-                    input(type='radio', name="year" value="3rd Year") 
-                    |  3rd Year
-                    br
-                    input(type='radio', name="year" value="4th Year") 
-                    |  4th Year
-                    br
-                    input(type='radio', name="year" value="5th Year") 
-                    |  5th Year
-                  .md-form
-                    i.fa.prefix
-                    label Subject Sem*
-                  .md-form
-                    input(type='radio', name="sem" value="1st Semester") 
-                    |  1st Semester
-                    br
-                    input(type='radio', name="sem" value="2nd Semester") 
-                    |  2nd Semester
+    //       .container
+    //             form(method="POST", action="/libs/add")
+    //               // Body
+    //               if (error)
+    //                     .card.card-danger.text-center.z-depth-2.mb-1
+    //                       .card-block
+    //                         p.white-text.mb-0
+    //                           | #{error}
+    //               else
+    //                 p 
+    //                 | Field with 
+    //                 strong.iscolor *
+    //                 |  is required.
+    //               br
+    //               // Body
+    //               .md-form
+    //                 i.fa.prefix
+    //                 input#form3.form-control(type='text', name="name")
+    //                 label(for='form3') Subject Name*
+    //               .md-form
+    //                 i.fa.prefix
+    //                 input#form2.form-control(type='text', name="code")
+    //                 label(for='form2') Subject Code*
+    //               .md-form
+    //                 i.fa.prefix
+    //                 label Subject Year*
+    //                 br
+    //                 input(type='radio', name="year" value="1st Year") 
+    //                 |  1st Year
+    //                 br
+    //                 input(type='radio', name="year" value="2nd Year") 
+    //                 |  2nd Year
+    //                 br
+    //                 input(type='radio', name="year" value="3rd Year") 
+    //                 |  3rd Year
+    //                 br
+    //                 input(type='radio', name="year" value="4th Year") 
+    //                 |  4th Year
+    //                 br
+    //                 input(type='radio', name="year" value="5th Year") 
+    //                 |  5th Year
+    //               .md-form
+    //                 i.fa.prefix
+    //                 label Subject Sem*
+    //               .md-form
+    //                 input(type='radio', name="sem" value="1st Semester") 
+    //                 |  1st Semester
+    //                 br
+    //                 input(type='radio', name="sem" value="2nd Semester") 
+    //                 |  2nd Semester
                                        
-                  .text-center
-                    button.btn.btn-default Submit
-                    .call
+    //               .text-center
+    //                 button.btn.btn-default Submit
+    //                 .call
+    //                   br
+    //                   p
+    //                     | 
+    //                     br
+    //                     span
+    //                       i.fa.
+    //                     |  
+    section#list.home-section.color-dark.bg-white
+        .container
+          .row
+            .headx
+              h2 Add Subject
+                .divider-headerx
+        .container
+            .headx
+              form(method="POST", action="/libs/add")
+                // Body
+                if (error)
+                      .card.card-danger.text-center.z-depth-2.mb-1
+                        .card-block
+                          p.white-text.mb-0
+                            | #{error}
+                else
+                  p 
+                  | Field with 
+                  strong.iscolor *
+                  |  is required.
+                br
+                // Body
+                .md-form.leftme
+                  i.fa.prefix
+                  label(for='form3').margBot Subject*
+                  input#form3.form-control(type='text', name="name")
+                .md-form.leftme
+                  i.fa.prefix
+                  label(for='form2').margBot Code*
+                  input#form2.form-control(type='text', name="code")
+                .md-form
+                  i.fa.prefix
+                  label.margBot Year*
+                  br
+                  input(type='radio', name="year" value="1st Year") 
+                  |  1st Year
+                  br
+                  input(type='radio', name="year" value="2nd Year") 
+                  |  2nd Year
+                  br
+                  input(type='radio', name="year" value="3rd Year") 
+                  |  3rd Year
+                  br
+                  input(type='radio', name="year" value="4th Year") 
+                  |  4th Year
+                  br
+                  input(type='radio', name="year" value="5th Year") 
+                  |  5th Year
+                .md-form
+                  i.fa.prefix
+                  label.margBot Semester*
+                .md-form
+                  input(type='radio', name="sem" value="1st Semester") 
+                  |  1st Semester
+                  br
+                  input(type='radio', name="sem" value="2nd Semester") 
+                  |  2nd Semester
+                                     
+                .text-center
+                  button.btn.btn-primary.marg Submit
+                  .call
+                    br
+                    p
+                      | 
                       br
-                      p
-                        | 
-                        br
-                        span
-                          i.fa.
-                        |  
+                      span
+                        i.fa.
+                      |  
+
