@@ -145,7 +145,7 @@ router.route('/:libId/itemnew')
   .post(function(req,res){
   new Item({
       description: req.body.description,
-      type: req.body.type,
+      type: 'PDF',
       link: req.body.link,
       lib: lib.code,
       createdate: moment().tz("Asia/Manila").format('LLL'),
